@@ -21,6 +21,14 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+}
+
   use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
   use('tpope/vim-fugitive')
 

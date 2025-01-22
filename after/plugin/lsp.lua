@@ -5,6 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'zls',
 })
 
 -- Fix Undefined global 'vim'
@@ -53,6 +54,8 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+require('lspconfig').zls.setup({})
 
 vim.diagnostic.config({
     virtual_text = true
