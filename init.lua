@@ -1,2 +1,2 @@
 require("finn")
-
+print("hello")
