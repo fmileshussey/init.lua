@@ -11,11 +11,11 @@ return {
                 -- Examples of typical LSP keymaps
                 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
                 vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-                if client.server_capabilities.documentFormattingProvider then
-                    vim.keymap.set("n", "<leader>f", function()
-                        vim.lsp.buf.format({ async = true })
-                    end, { buffer = bufnr, desc = "Format code" })
-                end
+                -- if client.server_capabilities.documentFormattingProvider then
+                --     vim.keymap.set("n", "<leader>f", function()
+                --         vim.lsp.buf.format({ async = true })
+                --     end, { buffer = bufnr, desc = "Format code" })
+                -- end
             end
 
             local capabilities = require("cmp_nvim_lsp")
