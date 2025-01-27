@@ -69,6 +69,17 @@ return {
                 },
 
             })
+            lspconfig.eslint.setup({
+                on_attach = function(client, bufnr)
+                    -- Enable auto-fixing on save
+                    if client.server_capabilities.documentFormattingProvider then
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            buffer = bufnr,
+                            command = "EslintFixAll",
+                        })
+                    end
+                end,
+            })
         end,
     },
     { 'hrsh7th/cmp-nvim-lsp' },
@@ -86,8 +97,8 @@ return {
                 ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
                 ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion menu
-                ["<C-e>"] = cmp.mapping.abort(),       -- Close completion menu
+                ["<C-Space>"] = cmp.mapping.complete(),            -- Trigger completion menu
+                ["<C-e>"] = cmp.mapping.abort(),                   -- Close completion menu
                 ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
                 ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
@@ -119,7 +130,7 @@ return {
                 mapping = cmp_mappings,
                 sources = {
                     { name = "nvim_lsp" }, -- LSP source
-                    { name = "luasnip" }, -- Snippets source
+                    { name = "luasnip" },  -- Snippets source
                 },
                 window = {
                     completion = cmp.config.window.bordered(),

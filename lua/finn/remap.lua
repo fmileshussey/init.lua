@@ -15,8 +15,8 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 
-vim.keymap.set('n', '<leader>bb', '<C-o>', { desc = 'Go back (jump list)' })
-vim.keymap.set('n', '<leader>bf', '<C-i>', { desc = 'Go forward (jump list)' })
+-- vim.keymap.set('n', '<leader>bb', '<C-o>', { desc = 'Go back (jump list)' })
+-- vim.keymap.set('n', '<leader>bf', '<C-i>', { desc = 'Go forward (jump list)' })
 
 -- TODO need to look into this?
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
