@@ -1,2 +1,1 @@
 require("finn")
-print("hello")
