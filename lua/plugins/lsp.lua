@@ -28,7 +28,7 @@ return {
                 "ts_ls",
                 "svelte",
                 "zls",
-                "eslint"
+                "eslint",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -36,7 +36,6 @@ return {
                         capabilities = capabilities
                     }
                 end,
-
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({
@@ -69,15 +68,21 @@ return {
                 ["eslint"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.eslint.setup {
-
+                        capabilities = capabilities
                     }
                 end,
                 ["ts_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.ts_ls.setup {
-
+                        capabilities = capabilities
                     }
                 end,
+                ["gradle_ls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.gradle_ls.setup {
+                        capabilities = capabilities
+                    }
+                end
             }
         })
 

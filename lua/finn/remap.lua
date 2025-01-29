@@ -23,3 +23,8 @@ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' }
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format document' })
 
 -- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {desc = 'Code Action'})
+
+-- TODO need to figure out the diff
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
